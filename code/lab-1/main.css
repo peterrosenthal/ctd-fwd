@@ -1,0 +1,19 @@
+body {
+  background: #ccddd3;
+  margin: 0;
+  padding: 0;
+  overflow: clip;
+}
+
+#wateringCan {
+  position: absolute;
+  pointer-events: none; /* thanks to https://stackoverflow.com/a/14432955 for pointing me to pointer-events (pun intendid) for disabling image click and drag */
+}
+
+#plant {
+  max-width: 70vw;
+  max-height: 97.5vh;
+  display: block;
+  margin: auto;
+  padding: 0;
+}
