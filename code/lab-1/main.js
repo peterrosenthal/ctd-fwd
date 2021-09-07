@@ -31,7 +31,7 @@ const pourWateringCan = () => {
     if (newPlantWaterLevel > plantWaterLevel && newPlantWaterLevel < 4) {
       plantWaterLevel = newPlantWaterLevel;
       plant.src = `images/plant-level${newPlantWaterLevel}.png`;
-      plant.alt = `A hand-drawn plant that can be grown taller by holding down the mouse to water. The plant is currently ${100/3 * newPlantWaterLevel}% grown.`
+      plant.alt = `An illustrated plant that can be grown taller by holding down the mouse to water. The plant is currently ${100/3 * newPlantWaterLevel}% grown.`
     }
     if (debugging) {
       console.log(`plantWaterAmount: ${plantWaterAmount}`);
@@ -52,7 +52,7 @@ const setWatering = (value) => {
   if (debugging) {
     console.log(`set watering to ${value}`);
   }
-}
+};
 
 const setWaterOverPlant = (value) => {
   waterOverPlant = value;
@@ -62,7 +62,7 @@ const setWaterOverPlant = (value) => {
   if (debugging) {
     console.log(`set waterOverPlant to ${value}`);
   }
-}
+};
 
 // --------------------------------------------------------------------------
 // event listeners
@@ -83,6 +83,6 @@ plant.addEventListener('mouseleave', () => {
   setWaterOverPlant(false);
 });
 // attempt to disable image dragging on the plant, we can't do it in css like we did for the watering can, so we need to do it in js
-plant.addEventListener('dragstart', () => {return false;});
-plant.addEventListener('drag', () => {return false;});
-plant.addEventListener('dragenter', () => {return false;});
+plant.addEventListener('dragstart', () => {});
+plant.addEventListener('drag', () => {});
+plant.addEventListener('dragenter', () => {});
