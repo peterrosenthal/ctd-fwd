@@ -9,3 +9,5 @@ This repository is organized into 2 major sections, `/process/` where I discuss 
 - [Process Milestone 1](/process/class-portal/README.md)
 ### Lab 1
 - [Code](/code/lab-1/)
+### Lab 3
+- [Code](/code/lab-3/)
