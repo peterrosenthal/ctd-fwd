@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+}
+
+header a, nav a {
+    text-decoration: none;
+}
+
+nav div {
+    max-width: 50em;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+section {
+    width: 95%;
+    max-width: 40em;
+    margin: auto;
+    text-align: center;
+}
+
+h2 button {
+    all: inherit;
+}
+
+h2 button:hover {
+    cursor: pointer;
+}
+
+h2 button:focus {
+    outline: 1px dashed lightblue;
+}
+
+.infoContainer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.infoContainer img {
+    width: 100%;
+    height: auto;
+    max-width: 10em;
+}
+
+#landingLinks {
+    width: 90%;
+    max-width: 35em;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#landingLinks a {
+    margin-top: 2em;
+    padding-top: 6.5em;
+    text-align: center;
+    width: 15em;
+    height: 8.5em;
+    border-radius: 1em;
+    border: 0.2em solid black;
+    text-decoration: none;
+}
