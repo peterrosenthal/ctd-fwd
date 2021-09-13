@@ -1,30 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Dosis', sans-serif;
 }
 
 header {
+    margin: 0;
     text-align: center;
+    background: #1b1b1c;
+    padding: 0.6em;
+    box-shadow: 0px 1px 15px #1b1b1c;
 }
 
-header a, nav a {
+header a {
     text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 2.75em;
+    color: #ffffff;
+    margin: 0;
+}
+
+nav {
+    background: #2d2d2e;
+    box-shadow: 0px 1px 15px #2d2d2e;
 }
 
 nav div {
     max-width: 50em;
     margin: auto;
+    padding: 0.6em;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
 }
 
+nav a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.3em;
+    transition: ease-in-out 0.2s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.activeNavItem {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+#labsNav {
+    color: #936194;
+}
+
+#projectsNav {
+    color: #ee7b30;
+}
+
+#codeNav {
+    color: #8aa8a1;
+}
+
+#processNav {
+    color: #d1b490;
+}
+
 section {
     width: 95%;
     max-width: 40em;
     margin: auto;
+    margin-top: 2em;
+    padding: 0.5em;
     text-align: center;
+    color: #2d2d2e;
+    border: 0.25em solid black;
+    border-radius: 1em;
+}
+
+section:hover {
+    background: black;
+    color: white;
+}
+
+.labsSection {
+    border-color: #936194;
+}
+
+.labsSection:hover {
+    background: #936194;
+}
+
+.projectsSection {
+    border-color:#ee7b30;
+}
+
+.projectsSection:hover {
+    background: #ee7b30;
+}
+
+h2 {
+    font-weight: 600;
 }
 
 h2 button {
@@ -63,12 +146,52 @@ h2 button:focus {
 }
 
 #landingLinks a {
-    margin-top: 2em;
-    padding-top: 6.5em;
+    margin-top: 1.3em;
+    padding-top: 3em;
     text-align: center;
-    width: 15em;
-    height: 8.5em;
+    width: 8em;
+    height: 4.5em;
+    border: 0.25em solid black;
     border-radius: 1em;
-    border: 0.2em solid black;
     text-decoration: none;
+    color: #2d2d2e;
+    font-size: 1.8em;
+    font-weight: 600;
+    transition: ease-in-out 0.2s;
+}
+
+#landingLinks a:hover {
+    color: white;
+}
+
+#landingLinks #labsButton {
+    border-color: #936194;
+}
+
+#landingLinks #projectsButton {
+    border-color:#ee7b30;
+}
+
+#landingLinks #codeButton {
+    border-color: #8aa8a1;
+}
+
+#landingLinks #processButton {
+    border-color: #d1b490;
+}
+
+#landingLinks #labsButton:hover {
+    background: #936194;
+}
+
+#landingLinks #projectsButton:hover {
+    background:#ee7b30;
+}
+
+#landingLinks #codeButton:hover {
+    background: #8aa8a1;
+}
+
+#landingLinks #processButton:hover {
+    background: #d1b490;
 }
