@@ -8,6 +8,7 @@ This repository is organized into 2 major sections, `/process/` where I discuss 
 ### Class Portal
 - [Process Milestone 1](/process/class-portal/README.md#milestone-1)
 - [Process Milestone 2](/process/class-portal/README.md#milestone-2)
+- [Code](/code/class-portal/)
 ### Lab 1
 - [Code](/code/lab-1/)
 ### Lab 3
