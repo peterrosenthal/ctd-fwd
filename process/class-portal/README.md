@@ -38,3 +38,5 @@ So shifted my design over to something that would be much more accessible, colla
 ![Mobile labs page for the class portal website.](../resources/class-portal-final-labs-mobile.png)
 ![Desktop landing page for the class portal website.](../resources/class-portal-final-landing-desktop.png)
 ![Desktop labs page for the class portal website.](../resources/class-portal-final-labs-desktop.png)
+
+Edit after the assignment was technically due: I forgot to mention things I learned from this and things I would change for next time. The big one for me is that it was a big old reminder to think about accessibility, usability, and POUR (Percievable, Operable, Understandable, and Robust) from the very beginning of the design. I think I ended up on a design in the end that satisfied the POUR factors very well, but it required a lot of changes and iteration from the design that I had set out and initially started coding from. I probably could have saved a good amount of time overall trying by to come up with a better design from the first place.
