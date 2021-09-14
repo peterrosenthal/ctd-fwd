@@ -49,11 +49,7 @@ const createCollapsibleSection = (heading) => {
   };
   const expandSection = () => {
     button.setAttribute('aria-expanded', true);
-    if (parentSection.className == 'labsSection') {
-      setParentSectionStyle('#936194', 'white');
-    } else if (parentSection.className == 'projectsSection') {
-      setParentSectionStyle('#ee7b30', 'white');
-    }
+    fillSectionColor();
     disableHoverEffects();
     infoContainer.style.display = 'flex';
     verticalSvgStrut.style.display = 'none';
