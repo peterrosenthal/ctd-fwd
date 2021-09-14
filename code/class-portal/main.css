@@ -78,40 +78,38 @@ section {
     max-width: 40em;
     margin: auto;
     margin-top: 2em;
-    padding: 0.5em;
+    padding: 0 0.25em 0.15em 0.25em;
     text-align: center;
-    color: #2d2d2e;
+    color: white;
+    box-shadow:  0px 1px 15px #2d2d2e44;
     border: 0.25em solid black;
     border-radius: 1em;
-}
-
-section:hover {
-    background: black;
-    color: white;
+    transition: ease-in-out 0.2s;
 }
 
 .labsSection {
     border-color: #936194;
-}
-
-.labsSection:hover {
     background: #936194;
 }
 
 .projectsSection {
     border-color:#ee7b30;
-}
-
-.projectsSection:hover {
     background: #ee7b30;
 }
 
 h2 {
     font-weight: 600;
+    margin: 0;
 }
 
 h2 button {
     all: inherit;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 96%;
+    margin: auto;
+    padding: 0.5em;
 }
 
 h2 button:hover {
@@ -122,17 +120,37 @@ h2 button:focus {
     outline: 1px dashed lightblue;
 }
 
+h2 button svg {
+    height: 1em;
+    margin: 0.25em;
+}
+
 .infoContainer {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
+    color: white;
 }
 
 .infoContainer img {
     width: 100%;
     height: auto;
     max-width: 10em;
+    border: 0.2em solid white;
+    border-radius: 0.65em;
+}
+
+.infoContainer a {
+    text-decoration: underline;
+    font-size: 1.1em;
+    padding: 0 0.1em;
+    font-style: italic;
+    color: white;
+}
+
+.entryLinks {
+    max-width: 55%;
 }
 
 #landingLinks {
@@ -151,6 +169,7 @@ h2 button:focus {
     text-align: center;
     width: 8em;
     height: 4.5em;
+    box-shadow:  0px 1px 15px #2d2d2e44;
     border: 0.25em solid black;
     border-radius: 1em;
     text-decoration: none;
