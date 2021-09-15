@@ -38,7 +38,7 @@ const createCollapsibleSection = (heading) => {
   };
   const fillSectionWhite = () => {
     setParentSectionStyle('none', '#2d2d2e');
-  }
+  };
   const enableHoverEffects = () => {
     parentSection.addEventListener('mouseenter', fillSectionColor);
     parentSection.addEventListener('mouseleave', fillSectionWhite);
