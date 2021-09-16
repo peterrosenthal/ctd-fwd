@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body, html {
+  padding: 0;
+  margin: 0;
+  background: #dad2d8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  width: 85%;
+  margin: auto;
+  margin-top: 2em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background: #143642;
+  color: white;
+  border: 0;
+  border-radius: 1.5em;
+  padding: 2em;
+}
+
+form {
+  text-align: center;
+}
+
+.radioItem {
+  text-align: left;
+}
+
+form > input, form > label {
+  display: block;
+}
+
+form > input {
+  margin-top: 0.3em;
+  margin-bottom: 0.8em;
+}
+
+input[type=color] {
+  margin: auto;
+}
+
+input[type=text] {
+  border: 0.2em solid #0f8b8d;
+  border-radius: 0.3em;
+  background: none;
+  color: white;
+}
+
+#dogSvg {
+  background: #dad2d8;
+  border: 0;
+  border-radius: 1.5em;
+}
+
+svg {
+  width: 100%;
+  max-width: 30em;
+  display: none;
+}
+
+button {
+  margin: 1em;
+  padding: 0.5em;
+  border: 0.2em solid #0f8b8d;
+  border-radius: 0.3em;
+  background: none;
+  color: white;
+  transition: ease-in-out 0.2s;
+}
+
+button:hover {
+  background: #0f8b8d;
+}
