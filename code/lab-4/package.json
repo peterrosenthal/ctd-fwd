@@ -1,0 +1,14 @@
+{
+  "name": "lab-4",
+  "version": "1.0.0",
+  "description": "FWD (frontend web dev) class  Lab 4",
+  "main": "main.js",
+  "scripts": {
+    "serve": "http-server"
+  },
+  "author": "Peter Rosenthal",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "pts": "^0.10.6"
+  }
+}
