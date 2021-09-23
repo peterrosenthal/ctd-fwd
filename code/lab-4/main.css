@@ -1,0 +1,37 @@
+html, body {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+  background: #89d5bf;
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 800px;
+  height: 98vh;
+  margin: auto;
+}
+
+.canvas-container {
+  width: 21%;
+  min-width: 80px;
+  margin: 1rem 0 1rem 0;
+  padding: 0;
+  border-radius: 3px;
+  box-shadow: 0px 4px 15px #000000aa;
+}
+
+.canvas-container:hover {
+  box-shadow: 0px 0px 9px #000000dd;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}

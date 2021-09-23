@@ -15,3 +15,5 @@ This repository is organized into 2 major sections, `/process/` where I discuss 
 - [Code](/code/lab-2/)
 ### Lab 3
 - [Code](/code/lab-3/)
+### Lab 4
+- [Code](/code/lab-4/)
