@@ -47,6 +47,15 @@ function drawTile(canvas) {
   let canvasSize = new Pt();
   let potentialFutureRemoval = false;
 
+  canvas.classList.remove('color-layer-0');
+  canvas.classList.remove('color-layer-1');
+  canvas.classList.remove('color-layer-2');
+  canvas.classList.remove('shape-layer-0');
+  canvas.classList.remove('shape-layer-1');
+  canvas.classList.remove('shape-layer-2');
+  canvas.classList.add(`color-layer-${layerColors[layerColors.length - 1]}`);
+  canvas.classList.add(`shape-layer-${layerShapes[layerShapes.length - 1]}`);
+
   space.add({
     start: (bound) => {
       canvasSize = bound.size;
@@ -55,11 +64,20 @@ function drawTile(canvas) {
         layerPositions.push(Num.randomPt(margin, canvasSize.$subtract(margin)));
       }
     },
+
     animate: () => {
       if (removalEvent && potentialFutureRemoval) {
         layerColors.pop();
         layerShapes.pop();
         layerPositions.pop();
+        canvas.classList.remove('color-layer-0');
+        canvas.classList.remove('color-layer-1');
+        canvas.classList.remove('color-layer-2');
+        canvas.classList.remove('shape-layer-0');
+        canvas.classList.remove('shape-layer-1');
+        canvas.classList.remove('shape-layer-2');
+        canvas.classList.add(`color-layer-${layerColors[layerColors.length - 1]}`);
+        canvas.classList.add(`shape-layer-${layerShapes[layerShapes.length - 1]}`);
         removalEvent = false;
         potentialFutureRemoval = false;
       }
@@ -91,6 +109,7 @@ function drawTile(canvas) {
         }
       }
     },
+
     action: (type) => {
       if (type == 'down') {
         if (selection.color == -1 && selection.shape == -1) {
@@ -115,6 +134,14 @@ function drawTile(canvas) {
           space.background = '#8bceb0';
           let colorNames = ['light', 'medium', 'dark'];
           document.querySelector('.slot').innerHTML = `${step}x on ${colorNames[selection.color]} ${shapes[selection.shape]}!`;
+          canvas.classList.remove('color-layer-0');
+          canvas.classList.remove('color-layer-1');
+          canvas.classList.remove('color-layer-2');
+          canvas.classList.remove('shape-layer-0');
+          canvas.classList.remove('shape-layer-1');
+          canvas.classList.remove('shape-layer-2');
+          canvas.classList.add(`color-layer-${layerColors[layerColors.length - 1]}`);
+          canvas.classList.add(`shape-layer-${layerShapes[layerShapes.length - 1]}`);
           if (step == 2) {
             removalEvent = true;
           }
@@ -134,6 +161,7 @@ function drawTile(canvas) {
         console.log(points);
       }
     },
+
     resize: (size) => {
       let scale = size.size.$divide(canvasSize);
       layerPositions.scale(scale);
