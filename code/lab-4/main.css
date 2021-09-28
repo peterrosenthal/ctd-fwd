@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&display=swap');
+
 html, body {
    margin: 0;
    padding: 0;
@@ -5,6 +7,26 @@ html, body {
 
 body {
   background: #dffcfa;
+  font-family: 'Gemunu Libre', sans-serif;
+}
+
+header {
+  text-align: center;
+  width: 90%;
+  max-width: 100rem;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3.5em;
+  margin: 0.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.5em;
+  font-weight: 300;
 }
 
 .combo {
@@ -22,8 +44,14 @@ main {
   justify-content: space-around;
   width: 90%;
   max-width: 800px;
-  height: 98vh;
+  height: 60vh;
   margin: auto;
+}
+
+@media only screen and (min-width: 900px) {
+  main {
+    height: 80vh;
+  }
 }
 
 .canvas-container {
