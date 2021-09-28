@@ -1,7 +1,7 @@
 // set up the Pts namespace to make our coding life easier
 Pts.namespace(window);
 
-const colors = ['#816e94', '#74226c', '#4b2142'];
+const colors = ['#46237a', '#3ddc97', '#ff495c'];
 const shapes = ['circle', 'rectangle', 'triangle'];
 let points = 0;
 let combo = 1;
@@ -70,7 +70,7 @@ function checkForEligibleMoves(canvas, checkParent) {
 // function drawTile(canvas) sets up a canvas as a tile in this NYT Tiles inspired game
 function drawTile(canvas) {
   let space = new CanvasSpace(canvas);
-  space.setup({ bgcolor: '#97ead2', resize: true, retina: true });
+  space.setup({ bgcolor: '#fcfcfc', resize: true, retina: true });
   let form = space.getForm();
   let layerColors = createRand3Order();
   let layerShapes = createRand3Order();
@@ -106,7 +106,7 @@ function drawTile(canvas) {
         }
         if (canvas.parentElement.classList.contains('active-container')) {
           canvas.parentElement.classList.remove('active-container');
-          space.background = '#97ead2';
+          space.background = '#fcfcfc';
         }
       }
       let strokeWidth = canvasSize.magnitude() / 6;
@@ -140,7 +140,7 @@ function drawTile(canvas) {
           potentialFutureRemoval = true;
           activatedStyle = true;
           canvas.parentElement.classList.add('active-container');
-          space.background = '#8bceb0';
+          space.background = '#eaeaea';
         } else if (selection.color == layerColors[layerColors.length - 1]
                 && selection.shape == layerShapes[layerShapes.length - 1]
                 && !potentialFutureRemoval) {
@@ -152,8 +152,8 @@ function drawTile(canvas) {
             combo++;
             activatedStyle = true;
             canvas.parentElement.classList.add('active-container');
-            space.background = '#8bceb0';
-            let colorNames = ['light', 'medium', 'dark'];
+            space.background = '#eaeaea';
+            let colorNames = ['purple', 'green', 'red'];
             document.querySelector('.slot').innerHTML = `${combo}x on ${colorNames[selection.color]} ${shapes[selection.shape]}!`;
           } else {
             combo = 1;
