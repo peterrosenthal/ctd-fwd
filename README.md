@@ -24,3 +24,4 @@ This repository is organized into 2 major sections, `/process/` where I discuss 
 - [Website](https://creative.colorado.edu/~pero7021/fwd/labs/lab4/)
 ### Project 1
 - [Process Milestone 1](/process/project-1/README.md#milestone-1)
+- [Process Milestone 2](/process/project-1/README.md#milestone-2)
