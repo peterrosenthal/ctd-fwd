@@ -1,6 +1,6 @@
 {
   "name": "project-1",
-  "version": "0.1.0",
+  "version": "milestone-2",
   "description": "First major project for ATLAS 5630 - Front-end Web Development",
   "main": "ts/main.ts",
   "scripts": {
@@ -11,7 +11,9 @@
   "author": "Peter Rosenthal",
   "license": "GPL-3.0",
   "dependencies": {
+    "@types/cannon": "^0.1.7",
     "@types/three": "^0.132.2",
+    "cannon-es": "^0.18.0",
     "http-server": "^13.0.2",
     "three": "^0.133.0",
     "ts-loader": "^9.2.6",
