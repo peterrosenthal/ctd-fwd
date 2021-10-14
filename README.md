@@ -28,3 +28,5 @@ This repository is organized into 2 major sections, `/process/` where I discuss 
 ### Project 1
 - [Process Milestone 1](/process/project-1/README.md#milestone-1)
 - [Process Milestone 2](/process/project-1/README.md#milestone-2)
+### Project 3
+- [Process Milestone 1](/process/project-3/README.md#milestone-1)
