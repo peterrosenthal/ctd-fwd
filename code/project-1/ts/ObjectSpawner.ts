@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { CarObject } from './CarObject';
+import { CityObject } from './CityObject';
 import { CubeObject } from './CubeObject';
 import { WorldSceneObject, WorldSceneSystem } from './WorldSceneSystem';
 
@@ -74,6 +75,16 @@ export class WorldSceneObjectSpawner {
       });
       this.objects.push(car);
       rate = CarObject.SPAWN_RATE;
+      break;
+    }
+    case WorldSceneObjectType.City: {
+      const city = new CityObject({
+        system: this.options.system,
+        position: this.getRandomPosition(),
+        color: this.options.color,
+      });
+      this.objects.push(city);
+      rate = CityObject.SPAWN_RATE;
       break;
     }
     default:

@@ -13,7 +13,7 @@ export interface CarObjectOptions {
 export class CarObject implements WorldSceneObject {
   static SPAWN_RATE = 0.5;
 
-  mesh?: THREE.Object3D;
+  mesh?: THREE.Mesh;
   body?: CANNON.Body;
 
   constructor(options: CarObjectOptions) {

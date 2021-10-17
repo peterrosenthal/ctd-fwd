@@ -2,7 +2,7 @@ import * as CANNON from 'cannon-es';
 import * as THREE from 'three';
 
 export interface WorldSceneObject {
-  mesh?: THREE.Object3D;
+  mesh?: THREE.Mesh;
   meshes?: THREE.Mesh[];
   body?: CANNON.Body;
   bodies?: CANNON.Body[];
@@ -69,13 +69,18 @@ export class WorldSceneSystem {
   }
 
   add(object: WorldSceneObject): void {
-    if (object.mesh !== undefined && object.body !== undefined) {
+    if (object.mesh !== undefined) {
       this.scene.add(object.mesh);
+    }
+    if (object.body !== undefined) {
       this.world.addBody(object.body);
-    } else if (object.meshes !== undefined && object.bodies !== undefined) {
+    }
+    if (object.meshes !== undefined) {
       for (const mesh of object.meshes) {
         this.scene.add(mesh);
       }
+    }
+    if (object.bodies !== undefined) {
       for (const body of object.bodies) {
         this.world.addBody(body);
       }
