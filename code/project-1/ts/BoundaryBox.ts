@@ -91,7 +91,7 @@ export class BoundaryBox implements WorldSceneObject {
     rightBody.quaternion.setFromEuler(0, -Math.PI / 2, 0);
     this.bodies.push(rightBody);
 
-    // back wall
+    // back wall (what the camera is looking right at)
     const backMesh = new THREE.Mesh(geometry, material);
     backMesh.scale.set(options.width, options.height, 1);
     this.meshes.push(backMesh);
@@ -106,6 +106,23 @@ export class BoundaryBox implements WorldSceneObject {
       options.position.z - options.depth / 2,
     );
     this.bodies.push(backBody);
+
+    // front wall (behind the camera)
+    const frontMesh = new THREE.Mesh(geometry, material);
+    frontMesh.scale.set(options.width, options.height, 1);
+    this.meshes.push(frontMesh);
+
+    const frontBody = new CANNON.Body({
+      type: CANNON.Body.STATIC,
+      shape: new CANNON.Plane(),
+    });
+    frontBody.position.set(
+      options.position.x,
+      options.position.y + options.height / 2,
+      options.position.z + options.depth / 2,
+    );
+    frontBody.quaternion.setFromEuler(Math.PI, 0, 0);
+    this.bodies.push(frontBody);
 
     // set rotations and positions of meshes
     // this only needs to be done once because all bodies are static

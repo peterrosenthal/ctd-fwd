@@ -6,10 +6,10 @@ import { WorldSceneSystem } from './WorldSceneSystem';
 // init world-scene system
 const system = new WorldSceneSystem({
   gravity: -9.8,
-  cameraFov: 55,
+  cameraFov: 60,
   cameraNear: 0.1,
   cameraFar: 1000,
-  cameraPos: new THREE.Vector3(0, 1.5, 10),
+  cameraPos: new THREE.Vector3(0, 2, 10),
   directionalLightIntensity: 0.8,
   directionalLightPosition: new THREE.Vector3(-1, 2, 4),
   ambientLightIntensity: 0.2,
@@ -17,11 +17,11 @@ const system = new WorldSceneSystem({
 
 // boundary box
 const boundary = new BoundaryBox({
-  position: new THREE.Vector3(0, -3, 1),
+  position: new THREE.Vector3(0, -3, 7),
   width: 12,
   height: 10,
-  depth: 6,
-  color: 0xeffdfc,
+  depth: 18,
+  color: 0xaafeda,
 });
 system.add(boundary);
 
