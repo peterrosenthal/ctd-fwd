@@ -1,0 +1,147 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.6.16",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Car Body"
+        },
+        {
+            "name" : "Light",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558803558349609,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "translation" : [
+                4.076245307922363,
+                5.903861999511719,
+                -1.0054539442062378
+            ]
+        },
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
+            ],
+            "translation" : [
+                7.358891487121582,
+                4.958309173583984,
+                6.925790786743164
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.4000000059604645
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 64,
+            "max" : [
+                1,
+                2.0661308765411377,
+                2.9720616340637207
+            ],
+            "min" : [
+                -1.9767473936080933,
+                -1,
+                -3.219541549682617
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 64,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 64,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 108,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 768,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 768,
+            "byteOffset" : 768
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 512,
+            "byteOffset" : 1536
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 216,
+            "byteOffset" : 2048
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 2264,
+            "uri" : "data:application/octet-stream;base64,AACAP+NeKT+WigLAAACAP+NeKT+WigLAAACAP+NeKT+WigLAAACAP+NeKT+WigLAAACAPwAAgL/RMCnAAACAPwAAgL/RMCnAAACAPwAAgL/RMCnAAACAP+NeKT8AAIA/AACAP+NeKT8AAIA/AACAP+NeKT8AAIA/AACAP+NeKT8AAIA/AACAPwAAgL9CNj5AAACAPwAAgL9CNj5AAACAPwAAgL9CNj5ADwb9v+NeKT+WigLADwb9v+NeKT+WigLADwb9v+NeKT+WigLADwb9vwAAgL/RMCnADwb9vwAAgL/RMCnADwb9vwAAgL/RMCnADwb9v+NeKT8AAIA/Dwb9v+NeKT8AAIA/Dwb9v+NeKT8AAIA/Dwb9vwAAgL9CNj5ADwb9vwAAgL9CNj5ADwb9vwAAgL9CNj5ADwb9v87foL5CNj5ADwb9v87foL5CNj5ADwb9v87foL5CNj5AAACAP87foL5CNj5AAACAP87foL5CNj5AAACAP87foL5CNj5AAACAP93weD7RMCnAAACAP93weD7RMCnAAACAP93weD7RMCnAAACAP93weD7RMCnADwb9v93weD7RMCnADwb9v93weD7RMCnADwb9v93weD7RMCnADwb9v93weD7RMCnAAACAPwAAgL/4DE7AAACAPwAAgL/4DE7AAACAPwAAgL/4DE7ADwb9vwAAgL/4DE7ADwb9vwAAgL/4DE7ADwb9vwAAgL/4DE7AAACAP8b6tz34DE7AAACAP8b6tz34DE7AAACAP8b6tz34DE7ADwb9v8b6tz34DE7ADwb9v8b6tz34DE7ADwb9v8b6tz34DE7AAACAP307BEDgVdi+AACAP307BEDgVdi+AACAP307BEDgVdi+Dwb9v307BEDgVdi+Dwb9v307BEDgVdi+Dwb9v307BEDgVdi+AACAP307BEDsOMS/AACAP307BEDsOMS/AACAP307BEDsOMS/Dwb9v307BEDsOMS/Dwb9v307BEDsOMS/Dwb9v307BEDsOMS/AAAAAH3BrT61znC/AAAAANFpUj/U0BG///9/PwAAAAAAAACAAACAPwAAAAAgePgxAAAAAAAAgL8AAACAAACAPwAAAAB1hz60AACAPwAAAAAgePgxAAAAAB4rNj/o3DM/AAAAAG5yZT+pEeM+//9/PwAAAAAAAACAAACAPwAAAAAgePgxAAAAAAAAgL8AAACAAAAAAAAAAAAAAIA/AACAPwAAAAAgePgxAACAvwAAAAAAAACAAAAAAH3BrT61znC/AAAAANFpUj/U0BG/AACAvwAAAAB1h760AACAvwAAAAAAAACAAAAAAAAAgL8AAACAAACAvwAAAAAAAACAAAAAAB4rNj/o3DM/AAAAAG5yZT+pEeM+AACAvwAAAAAAAACAAAAAAAAAgL8AAACAAAAAAAAAAAAAAIA/AACAvwAAAAAAAACAAAAAAAAAAAAAAIA/AAAAAG5yZT+pEeM+AAAAAAAAAAAAAIA/AAAAAG5yZT+pEeM+AACAPwAAAAAgePgxAAAAANFpUj/U0BG/AAAAAKxjdz+SrIO+AACAPwAAAAB1hz60AACAPwAAAAAgePgxAACAvwAAAAB1h760AACAvwAAAAAAAACAAAAAANFpUj/U0BG/AAAAAKxjdz+SrIO+AAAAAAAAgL8AAACAAAAAAAAAAAAAAIC/AACAPwAAAAB1hz60AACAvwAAAAB1h760AAAAAAAAgL8AAACAAAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAKxjdz+SrIO+AACAPwAAAAB1hz60AACAvwAAAAB1h760AAAAAAAAAAAAAIC/AAAAAKxjdz+SrIO+AAAAAB4rNj/o3DM/AAAAAAAAgD8AAACA//9/PwAAAAAAAACAAACAvwAAAAAAAACAAAAAAB4rNj/o3DM/AAAAAAAAgD8AAACAAAAAAH3BrT61znC/AAAAAAAAgD8AAACA//9/PwAAAAAAAACAAACAvwAAAAAAAACAAAAAAH3BrT61znC/AAAAAAAAgD8AAACAAAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AAMA+AAAAPwAAwD4AAAA/AADAPgAAAD8AACA/AACAPgAAID8AAIA+AAAgPwAAgD4AACA/AACAPgAAwD4AAIA+AADAPgAAgD4AAMA+AACAPgAAID8AAEA/AAAgPwAAQD8AACA/AABAPwAAwD4AAEA/AADAPgAAQD8AAAA+AAAAPwAAID8AAIA/AAAgPwAAAAAAACA/AAAAAAAAwD4AAIA/AAAAPgAAgD4AAMA+AAAAAAAAAD8AAIA/AAAAPwAAAAAAAAA/AAAAAAAAAD8AAIA+AAAAPwAAgD4AAAA/AACAPgAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAQD8AAAA/AABAPwAAAD8AAEA/AAAAPwAAQD8AAMA+AAAAPwAAwD4AAAA/AADAPgAAAD8AAMA+AABAPwAAAD4AAAA/AADAPgAAQD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AABAPwAAAD8AAEA/AAAAPwAAQD8AACA/AACAPgAAID8AAIA+AAAgPwAAgD4AACA/AACAPwAAID8AAAAAAABgPwAAgD4AACA/AAAAPwAAID8AAAA/AAAgPwAAAD8AACA/AABAPwAAID8AAEA/AABgPwAAAD8OABQANwAOADcAPQAeAAgAFgAeABYAHAASABcAGgAaABQADgAOACUAEgAaAA4AEgATAAQACwATAAsAGAANAAYAIwAjAAMACgAKAB8ADQAjAAoADQAmABAAAQAmAAEAIAAMAB0AGwAMABsAGQAiAAUAKgAiACoAMAAtADIALgAtAC4AKQARACQAMQARADEAKwAEABMALAAEACwAKAAnACEALwAnAC8AMwA7AD8AOQA7ADkANQAJAAIAPAAJADwANgAAAA8APgAAAD4AOgAVAAcANAAVADQAOAA="
+        }
+    ]
+}

@@ -35,6 +35,7 @@
         "ignoreUrls": true
       }
     ],
+    "@typescript-eslint/no-non-null-assertion": "off",
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "space-in-parens": ["error", "never"]
