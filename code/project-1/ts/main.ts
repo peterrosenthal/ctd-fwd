@@ -28,10 +28,11 @@ system.add(boundary);
 // object spawner
 const spawner = new WorldSceneObjectSpawner({
   system: system,
-  type: WorldSceneObjectType.Cube,
+  type: WorldSceneObjectType.Car,
   position: new THREE.Vector3(0, 5, 1),
   width: 11,
   depth: 5,
+  color: 0xab339a,
 });
 
 // animation loop

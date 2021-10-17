@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { CarObject } from './CarObject';
 import { CubeObject } from './CubeObject';
 import { WorldSceneObject, WorldSceneSystem } from './WorldSceneSystem';
 
@@ -42,23 +43,37 @@ export class WorldSceneObjectSpawner {
     this.spawnObject();
   }
 
+  getRandomPosition(): THREE.Vector3 {
+    return new THREE.Vector3(
+      Math.random() * this.options.width! -
+      this.options.width! / 2 + this.options.position!.x,
+      this.options.position!.y,
+      Math.random() * this.options.depth! -
+      this.options.depth! / 2 + this.options.position!.z,
+    );
+  }
+
   spawnObject(): void {
     let rate = 1;
     switch (this.options.type) {
     case WorldSceneObjectType.Cube: {
       const cube = new CubeObject({
-        position: new THREE.Vector3(
-          Math.random() * this.options.width! -
-          this.options.width! / 2 + this.options.position!.x,
-          this.options.position!.y,
-          Math.random() * this.options.depth! -
-          this.options.depth! / 2 + this.options.position!.z,
-        ),
+        position: this.getRandomPosition(),
         color: this.options.color,
       });
       this.objects.push(cube);
       this.options.system.add(cube);
       rate = CubeObject.SPAWN_RATE;
+      break;
+    }
+    case WorldSceneObjectType.Car: {
+      const car = new CarObject({
+        system: this.options.system,
+        position: this.getRandomPosition(),
+        color: this.options.color,
+      });
+      this.objects.push(car);
+      rate = CarObject.SPAWN_RATE;
       break;
     }
     default:

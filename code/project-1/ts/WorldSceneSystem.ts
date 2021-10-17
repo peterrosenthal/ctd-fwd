@@ -2,7 +2,7 @@ import * as CANNON from 'cannon-es';
 import * as THREE from 'three';
 
 export interface WorldSceneObject {
-  mesh?: THREE.Mesh;
+  mesh?: THREE.Object3D;
   meshes?: THREE.Mesh[];
   body?: CANNON.Body;
   bodies?: CANNON.Body[];
