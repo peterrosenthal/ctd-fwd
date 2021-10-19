@@ -28,8 +28,8 @@ system.add(boundary);
 // object spawner
 const spawner = new WorldSceneObjectSpawner({
   system: system,
-  type: WorldSceneObjectType.City,
-  position: new THREE.Vector3(0, 5, 1),
+  type: WorldSceneObjectType.Coal,
+  position: new THREE.Vector3(0, 7, 1),
   width: 11,
   depth: 5,
   color: 0xab339a,

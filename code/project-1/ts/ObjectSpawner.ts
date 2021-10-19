@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { CarObject } from './CarObject';
 import { CityObject } from './CityObject';
+import { CoalObject } from './CoalObject';
 import { CubeObject } from './CubeObject';
 import { WorldSceneObject, WorldSceneSystem } from './WorldSceneSystem';
 
@@ -85,6 +86,15 @@ export class WorldSceneObjectSpawner {
       });
       this.objects.push(city);
       rate = CityObject.SPAWN_RATE;
+      break;
+    }
+    case WorldSceneObjectType.Coal: {
+      const coal = new CoalObject({
+        system: this.options.system,
+        position: this.getRandomPosition(),
+      });
+      this.objects.push(coal);
+      rate = CoalObject.SPAWN_RATE;
       break;
     }
     default:
