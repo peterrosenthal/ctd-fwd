@@ -1,6 +1,7 @@
 import * as CANNON from 'cannon-es';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { CryptoSpawnRate } from './ObjectSpawner';
 import { WorldSceneObject, WorldSceneSystem } from './WorldSceneSystem';
 
 export interface CityObjectOptions {
@@ -11,7 +12,11 @@ export interface CityObjectOptions {
 }
 
 export class CityObject implements WorldSceneObject {
-  static SPAWN_RATE = 0.25;
+  static SPAWN_RATE: CryptoSpawnRate = {
+    bitcoin: 1,
+    ethereum: 0.5,
+    tezos: 0.25,
+  };
 
   meshes: THREE.Mesh[];
   body?: CANNON.Body;

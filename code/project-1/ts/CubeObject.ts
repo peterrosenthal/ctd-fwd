@@ -1,5 +1,6 @@
 import * as CANNON from 'cannon-es';
 import * as THREE from 'three';
+import { CryptoSpawnRate } from './ObjectSpawner';
 import { WorldSceneObject } from './WorldSceneSystem';
 
 export interface CubeObjectOptions {
@@ -10,7 +11,11 @@ export interface CubeObjectOptions {
 }
 
 export class CubeObject implements WorldSceneObject {
-  static SPAWN_RATE = 1;
+  static SPAWN_RATE: CryptoSpawnRate = {
+    bitcoin: 1,
+    ethereum: 1,
+    tezos: 1,
+  };
 
   mesh: THREE.Mesh;
   body: CANNON.Body;

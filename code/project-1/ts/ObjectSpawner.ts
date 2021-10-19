@@ -6,15 +6,28 @@ import { CubeObject } from './CubeObject';
 import { WorldSceneObject, WorldSceneSystem } from './WorldSceneSystem';
 
 export enum WorldSceneObjectType {
-  Cube,
-  Car,
-  Coal,
-  City,
+  CUBE,
+  CAR,
+  COAL,
+  CITY,
+}
+
+export enum CryptoType {
+  BITCOIN,
+  ETHEREUM,
+  TEZOS,
+}
+
+export interface CryptoSpawnRate {
+  bitcoin: number;
+  ethereum: number;
+  tezos: number;
 }
 
 export interface ObjectSpawnerOptions {
   system: WorldSceneSystem;
   type: WorldSceneObjectType;
+  crypto: CryptoType;
   position?: THREE.Vector3;
   width?: number;
   depth?: number;
@@ -53,9 +66,9 @@ export class WorldSceneObjectSpawner {
   }
 
   spawnObject(): void {
-    let rate = 1;
+    let rate: CryptoSpawnRate;
     switch (this.options.type) {
-      case WorldSceneObjectType.Cube: {
+      case WorldSceneObjectType.CUBE: {
         const cube = new CubeObject({
           position: this.getRandomPosition(),
           color: this.options.color,
@@ -65,7 +78,7 @@ export class WorldSceneObjectSpawner {
         rate = CubeObject.SPAWN_RATE;
         break;
       }
-      case WorldSceneObjectType.Car: {
+      case WorldSceneObjectType.CAR: {
         const car = new CarObject({
           system: this.options.system,
           position: this.getRandomPosition(),
@@ -75,7 +88,7 @@ export class WorldSceneObjectSpawner {
         rate = CarObject.SPAWN_RATE;
         break;
       }
-      case WorldSceneObjectType.City: {
+      case WorldSceneObjectType.CITY: {
         const city = new CityObject({
           system: this.options.system,
           position: this.getRandomPosition(),
@@ -85,7 +98,7 @@ export class WorldSceneObjectSpawner {
         rate = CityObject.SPAWN_RATE;
         break;
       }
-      case WorldSceneObjectType.Coal: {
+      case WorldSceneObjectType.COAL: {
         const coal = new CoalObject({
           system: this.options.system,
           position: this.getRandomPosition(),
@@ -95,8 +108,28 @@ export class WorldSceneObjectSpawner {
         break;
       }
       default:
+        rate = {
+          bitcoin: 1,
+          ethereum: 1,
+          tezos: 1,
+        };
         break;
     }
-    setTimeout(() => { this.spawnObject(); }, 1000 / rate);
+    let spawn: number;
+    switch (this.options.crypto) {
+      case CryptoType.BITCOIN:
+        spawn = rate.bitcoin;
+        break;
+      case CryptoType.ETHEREUM:
+        spawn = rate.ethereum;
+        break;
+      case CryptoType.TEZOS:
+        spawn = rate.tezos;
+        break;
+      default:
+        spawn = 1;
+        break;
+    }
+    setTimeout(() => { this.spawnObject(); }, 1000 / spawn);
   }
 }

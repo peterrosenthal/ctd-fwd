@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { BoundaryBox } from './BoundaryBox';
-import { WorldSceneObjectSpawner, WorldSceneObjectType } from './ObjectSpawner';
+import { CryptoType, WorldSceneObjectSpawner, WorldSceneObjectType } from './ObjectSpawner';
 import { WorldSceneSystem } from './WorldSceneSystem';
 
 // init world-scene system
@@ -28,27 +28,48 @@ system.add(boundary);
 // object spawner
 const spawner = new WorldSceneObjectSpawner({
   system: system,
-  type: WorldSceneObjectType.Coal,
+  type: WorldSceneObjectType.COAL,
+  crypto: CryptoType.BITCOIN,
   position: new THREE.Vector3(0, 7, 1),
   width: 11,
   depth: 5,
 });
 
+// cryptocurrency selector
+const crypto = document.getElementById('crypto') as HTMLSelectElement;
+function changeSpawnerCrypto(): void {
+  switch (crypto.value) {
+    case 'bitcoin':
+      spawner.options.crypto = CryptoType.BITCOIN;
+      break;
+    case 'ethereum':
+      spawner.options.crypto = CryptoType.ETHEREUM;
+      break;
+    case 'tezos':
+      spawner.options.crypto = CryptoType.TEZOS;
+      break;
+    default:
+      break;
+  }
+}
+crypto.addEventListener(('change'), changeSpawnerCrypto);
+
+// measurement/object selector
 const measurement = document.getElementById('measurement') as HTMLSelectElement;
-function changeSpawnerObject() {
+function changeSpawnerObject(): void {
   switch (measurement.value) {
     case 'coal':
-      spawner.options.type = WorldSceneObjectType.Coal;
+      spawner.options.type = WorldSceneObjectType.COAL;
       break;
     case 'car':
-      spawner.options.type = WorldSceneObjectType.Car;
+      spawner.options.type = WorldSceneObjectType.CAR;
       break;
     case 'city':
-      spawner.options.type = WorldSceneObjectType.City;
+      spawner.options.type = WorldSceneObjectType.CITY;
       break;
     default:
       // default cube
-      spawner.options.type = WorldSceneObjectType.Cube;
+      spawner.options.type = WorldSceneObjectType.CUBE;
       break;
   }
 }
