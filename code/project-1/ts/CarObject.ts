@@ -12,10 +12,19 @@ export interface CarObjectOptions {
 }
 
 export class CarObject implements WorldSceneObject {
+  // rates are based on the rates from the CoalObject, so see CoalObject.ts
+  // for more initial explanation
+  // to adjust for car driving time, I used information from the U.S. Energy
+  // Information Administration - 1 kWh of coal electricity emits 2.21 lbs of
+  // CO2 into the atmosphere
+  // source: https://www.eia.gov/tools/faqs/faq.php?id=74&t=11
+  // I also used information from the U.S. Environmental Protection Agency -
+  // driving for 1 mile emits 404 grams (0.89 lbs) of CO2 into the atmosphere
+  // source: https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle
   static SPAWN_RATE: CryptoSpawnRate = {
-    bitcoin: 2,
-    ethereum: 1,
-    tezos: 0.5,
+    bitcoin: 1000, // actual rate: 1023, but we cannot exceed spawning every 1 ms
+    ethereum: 213,
+    tezos: 0.028,
   };
 
   mesh?: THREE.Mesh;

@@ -12,10 +12,16 @@ export interface CityObjectOptions {
 }
 
 export class CityObject implements WorldSceneObject {
+  // rates are based on the rates from the CoalObject, so see CoalObject.ts
+  // for more initial explanation
+  // to adjust for city electrity usage, I used numbers from Wikipedia - in
+  // the US, the average energy consumption per person is 1,387 watts
+  // for a city, I chose Denver, which has a population of 749,103 people,
+  // meaning in just one minute, Denver uses more than 17 MWh of elecricity
   static SPAWN_RATE: CryptoSpawnRate = {
-    bitcoin: 1,
-    ethereum: 0.5,
-    tezos: 0.25,
+    bitcoin: 0.24,
+    ethereum: 0.05,
+    tezos: 0.0000006,
   };
 
   meshes: THREE.Mesh[];

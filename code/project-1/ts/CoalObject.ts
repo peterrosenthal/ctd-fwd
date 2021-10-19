@@ -12,10 +12,16 @@ export interface CoalObjectOptions {
 }
 
 export class CoalObject implements WorldSceneObject {
+  // rates come from Tezos, who estimates 130 TWh annual consumption for bitcoin,
+  // 26 TWh for Ethereum, and 350MWh for Tezos (themselves)
+  // source: https://medium.com/tqtezos/proof-of-work-vs-proof-of-stake-the-ecological-footprint-c58029faee44
+  // get from watt-hours to tons of coal, I used the U.S. Energy Information
+  // Administration's number of 1.13 lbs coal generates 1 kWh of electricity
+  // source: https://www.eia.gov/tools/faqs/faq.php?id=667&t=2
   static SPAWN_RATE: CryptoSpawnRate = {
-    bitcoin: 3,
-    ethereum: 2,
-    tezos: 1,
+    bitcoin: 2.329,
+    ethereum: 0.466,
+    tezos: 0.0000063,
   };
 
   mesh?: THREE.Mesh;
