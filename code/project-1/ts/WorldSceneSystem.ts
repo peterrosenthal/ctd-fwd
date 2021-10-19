@@ -23,7 +23,7 @@ export interface WorldSceneSystemOptions {
 export class WorldSceneSystem {
   world: CANNON.World;
   scene: THREE.Scene;
-  camera: THREE.Camera;
+  camera: THREE.PerspectiveCamera;
   renderer: THREE.WebGLRenderer;
   
   constructor(options: WorldSceneSystemOptions) {
@@ -85,5 +85,12 @@ export class WorldSceneSystem {
         this.world.addBody(body);
       }
     }
+  }
+
+  resize():void {
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 }

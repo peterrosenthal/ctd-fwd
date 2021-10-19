@@ -100,3 +100,6 @@ function animate(): void {
   requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
+
+// make THREEjs canvas responsive to active changes in screen size
+window.addEventListener('resize', () => { system.resize(); });
