@@ -83,6 +83,16 @@ measurement.addEventListener(('change'), () => {
 });
 changeSpawnerObject();
 
+// reset button
+const reset = document.getElementById('reset') as HTMLButtonElement;
+function resetObjects(): void {
+  for (const object of spawner.objects) {
+    system.remove(object);
+  }
+  spawner.objects = [];
+}
+reset.addEventListener('click', resetObjects);
+
 // animation loop
 function animate(): void {
   // run CANNON simulation

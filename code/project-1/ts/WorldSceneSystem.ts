@@ -87,6 +87,25 @@ export class WorldSceneSystem {
     }
   }
 
+  remove(object: WorldSceneObject): void {
+    if (object.mesh !== undefined) {
+      this.scene.remove(object.mesh);
+    }
+    if (object.body !== undefined) {
+      this.world.removeBody(object.body);
+    }
+    if (object.meshes !== undefined) {
+      for (const mesh of object.meshes) {
+        this.scene.remove(mesh);
+      }
+    }
+    if (object.bodies !== undefined) {
+      for (const body of object.bodies) {
+        this.world.removeBody(body);
+      }
+    }
+  }
+
   resize():void {
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();

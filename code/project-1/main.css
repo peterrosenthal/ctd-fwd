@@ -20,8 +20,20 @@ header {
   box-shadow: 0px 2px 10px #000000;
 }
 
+form {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+form button {
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
 .settings-item {
-  display: inline-flex;
+  display: flex;
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
