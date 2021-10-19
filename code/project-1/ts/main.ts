@@ -52,7 +52,11 @@ function changeSpawnerCrypto(): void {
       break;
   }
 }
-crypto.addEventListener(('change'), changeSpawnerCrypto);
+crypto.addEventListener(('change'), () => {
+  changeSpawnerCrypto();
+  spawner.reset();
+});
+changeSpawnerCrypto();
 
 // measurement/object selector
 const measurement = document.getElementById('measurement') as HTMLSelectElement;
@@ -73,7 +77,11 @@ function changeSpawnerObject(): void {
       break;
   }
 }
-measurement.addEventListener(('change'), changeSpawnerObject);
+measurement.addEventListener(('change'), () => {
+  changeSpawnerObject();
+  spawner.reset();
+});
+changeSpawnerObject();
 
 // animation loop
 function animate(): void {

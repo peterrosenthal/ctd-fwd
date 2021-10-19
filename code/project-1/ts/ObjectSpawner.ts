@@ -37,6 +37,7 @@ export interface ObjectSpawnerOptions {
 export class WorldSceneObjectSpawner {
   objects: WorldSceneObject[];
   options: ObjectSpawnerOptions;
+  timeout?: number;
 
   constructor(options: ObjectSpawnerOptions) {
     if (options.position === undefined) {
@@ -130,6 +131,12 @@ export class WorldSceneObjectSpawner {
         spawn = 1;
         break;
     }
-    setTimeout(() => { this.spawnObject(); }, 1000 / spawn);
+    this.timeout =
+      setTimeout(() => { this.spawnObject(); }, 1000 / spawn) as unknown as number;
+  }
+
+  reset(): void {
+    clearTimeout(this.timeout);
+    this.spawnObject();
   }
 }
