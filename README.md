@@ -29,6 +29,6 @@ This repository is organized into 2 major sections, `/process/` where I discuss 
 - [Process Milestone 1](/process/project-1/README.md#milestone-1)
 - [Process Milestone 2](/process/project-1/README.md#milestone-2)
 - [Code](/code/project-1/)
-- [Website](https://creative.colorado.edu/~pero7021/fwd/projects/project-1/)
+- [Website](https://creative.colorado.edu/~pero7021/fwd/projects/project1/)
 ### Project 3
 - [Process Milestone 1](/process/project-3/README.md#milestone-1)
