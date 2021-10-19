@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
 body {
   margin: 0;
+  font-family: 'Inconsolata', monospace;
+}
+
+header {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2b3d41;
+  color: white;
+  box-shadow: 0px 2px 10px #000000;
+}
+
+.settings-item {
+  display: inline-flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 1em;
 }

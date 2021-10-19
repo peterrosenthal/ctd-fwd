@@ -34,9 +34,9 @@ export class CoalObject implements WorldSceneObject {
         if (geometry !== undefined) {
           this.mesh = new THREE.Mesh(geometry, material);
           this.mesh.scale.set(
-            Math.random() * 0.08 + 0.27,
-            Math.random() * 0.08 + 0.27,
-            Math.random() * 0.08 + 0.27,
+            Math.random() * 0.1 + 0.3,
+            Math.random() * 0.1 + 0.3,
+            Math.random() * 0.1 + 0.3,
           );
           const box = new THREE.Box3().setFromObject(this.mesh);
           const size = box.getSize(new THREE.Vector3());

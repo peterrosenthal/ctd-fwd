@@ -21,7 +21,7 @@ export class CarObject implements WorldSceneObject {
       options.mass = 1;
     }
     if (options.color === undefined) {
-      options.color = 0xffffff;
+      options.color = 0x9d4d69;
     }
 
     const loader = new GLTFLoader();

@@ -21,7 +21,7 @@ const boundary = new BoundaryBox({
   width: 12,
   height: 10,
   depth: 18,
-  color: 0xaafeda,
+  color: 0x4c5f6b,
 });
 system.add(boundary);
 
@@ -32,8 +32,27 @@ const spawner = new WorldSceneObjectSpawner({
   position: new THREE.Vector3(0, 7, 1),
   width: 11,
   depth: 5,
-  color: 0xab339a,
 });
+
+const measurement = document.getElementById('measurement') as HTMLSelectElement;
+function changeSpawnerObject() {
+  switch (measurement.value) {
+    case 'coal':
+      spawner.options.type = WorldSceneObjectType.Coal;
+      break;
+    case 'car':
+      spawner.options.type = WorldSceneObjectType.Car;
+      break;
+    case 'city':
+      spawner.options.type = WorldSceneObjectType.City;
+      break;
+    default:
+      // default cube
+      spawner.options.type = WorldSceneObjectType.Cube;
+      break;
+  }
+}
+measurement.addEventListener(('change'), changeSpawnerObject);
 
 // animation loop
 function animate(): void {

@@ -35,9 +35,6 @@ export class WorldSceneObjectSpawner {
     if (options.depth === undefined) {
       options.depth = 1;
     }
-    if (options.color === undefined) {
-      options.color = 0xffffff;
-    }
 
     this.objects = [];
     this.options = options;

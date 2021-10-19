@@ -21,7 +21,7 @@ export class CityObject implements WorldSceneObject {
       options.mass = 1;
     }
     if (options.color === undefined) {
-      options.color = 0xffffff;
+      options.color = 0x19293e;
     }
 
     this.meshes = [];
