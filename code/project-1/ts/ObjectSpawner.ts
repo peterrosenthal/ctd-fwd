@@ -58,47 +58,47 @@ export class WorldSceneObjectSpawner {
   spawnObject(): void {
     let rate = 1;
     switch (this.options.type) {
-    case WorldSceneObjectType.Cube: {
-      const cube = new CubeObject({
-        position: this.getRandomPosition(),
-        color: this.options.color,
-      });
-      this.objects.push(cube);
-      this.options.system.add(cube);
-      rate = CubeObject.SPAWN_RATE;
-      break;
-    }
-    case WorldSceneObjectType.Car: {
-      const car = new CarObject({
-        system: this.options.system,
-        position: this.getRandomPosition(),
-        color: this.options.color,
-      });
-      this.objects.push(car);
-      rate = CarObject.SPAWN_RATE;
-      break;
-    }
-    case WorldSceneObjectType.City: {
-      const city = new CityObject({
-        system: this.options.system,
-        position: this.getRandomPosition(),
-        color: this.options.color,
-      });
-      this.objects.push(city);
-      rate = CityObject.SPAWN_RATE;
-      break;
-    }
-    case WorldSceneObjectType.Coal: {
-      const coal = new CoalObject({
-        system: this.options.system,
-        position: this.getRandomPosition(),
-      });
-      this.objects.push(coal);
-      rate = CoalObject.SPAWN_RATE;
-      break;
-    }
-    default:
-      break;
+      case WorldSceneObjectType.Cube: {
+        const cube = new CubeObject({
+          position: this.getRandomPosition(),
+          color: this.options.color,
+        });
+        this.objects.push(cube);
+        this.options.system.add(cube);
+        rate = CubeObject.SPAWN_RATE;
+        break;
+      }
+      case WorldSceneObjectType.Car: {
+        const car = new CarObject({
+          system: this.options.system,
+          position: this.getRandomPosition(),
+          color: this.options.color,
+        });
+        this.objects.push(car);
+        rate = CarObject.SPAWN_RATE;
+        break;
+      }
+      case WorldSceneObjectType.City: {
+        const city = new CityObject({
+          system: this.options.system,
+          position: this.getRandomPosition(),
+          color: this.options.color,
+        });
+        this.objects.push(city);
+        rate = CityObject.SPAWN_RATE;
+        break;
+      }
+      case WorldSceneObjectType.Coal: {
+        const coal = new CoalObject({
+          system: this.options.system,
+          position: this.getRandomPosition(),
+        });
+        this.objects.push(coal);
+        rate = CoalObject.SPAWN_RATE;
+        break;
+      }
+      default:
+        break;
     }
     setTimeout(() => { this.spawnObject(); }, 1000 / rate);
   }
