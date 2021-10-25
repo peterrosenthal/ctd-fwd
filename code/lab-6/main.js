@@ -1,36 +1,110 @@
-import { initializeApp } from 'firebase/app';
-import { collection, addDoc, getDocs, getFirestore } from 'firebase/firestore';
+import { addTestData, getTestData } from './firestuff.js';
 
-const app = initializeApp({
-  apiKey: 'AIzaSyA3D6y8tekOmx8P7Nw0i2D4RKAkdHH6-NQ',
-  authDomain: 'fwd-lab-6-7574f.firebaseapp.com',
-  projectId: 'fwd-lab-6-7574f',
-  storageBucket: 'fwd-lab-6-7574f.appspot.com',
-  messagingSenderId: '69985364492',
-  appId: '1:69985364492:web:8f82777b809ad544dadc29',
-});
+const main = document.querySelector('main');
+const newItemButton = document.querySelector('#new-item-button');
 
-const firestore = getFirestore(app);
+let data;
 
-async function addTestData() {
-  try {
-    const doc = await addDoc(collection(firestore, 'test'), {
-      id: Math.floor(Math.random() * 10),
-      name: 'code',
-    });
-    console.log(`Document written with ID: ${doc.id}`);
-  } catch (e) {
-    console.error(`Error adding document: ${e}`);
+// function to fill page with items
+async function fillItems() {
+  data = await getTestData();
+  for (const item of data) {
+    const div = document.createElement('div');
+    div.classList.add('cms-entry');
+    main.insertBefore(div, newItemButton);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = item.title;
+    div.appendChild(h2);
+
+    for (const paragraph of item.paragraphs) {
+      const p = document.createElement('p');
+      p.textContent = paragraph;
+      div.appendChild(p);
+    }
+  }
+}
+fillItems();
+
+// function to clear page of items
+function clearItems() {
+  for (const item of document.querySelectorAll('.cms-entry')) {
+    item.remove();
   }
 }
 
-async function getTestData() {
-  const querySnapshot = await getDocs(collection(firestore, 'test'));
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
-    console.log(doc.data());
-  });
-}
+// add new item
+async function createItem() {
+  const item = {};
 
-addTestData();
-getTestData();
+  newItemButton.remove();
+  const form = document.createElement('form');
+  main.appendChild(form);
+
+  const title = {
+    div: document.createElement('div'),
+    label: document.createElement('label'),
+    entry: document.createElement('input'),
+  };
+  title.div.style.display = 'flex';
+  title.div.style.flexFlow = 'row';
+  title.div.style.justifyContent = 'safe center';
+  title.div.style.alignContent = 'center';
+  title.label.textContent = 'Title: ';
+  title.label.htmlFor = 'title-entry';
+  title.entry.id = 'title-entry';
+  title.entry.type = 'text';
+  title.entry.addEventListener('focusout', () => { item.title = title.entry.value; });
+  title.div.appendChild(title.label);
+  title.div.appendChild(title.entry);
+  form.appendChild(title.div);
+
+  const buttons = {
+    div: document.createElement('div'),
+    paragraph: document.createElement('button'),
+    save: document.createElement('button'),
+  };
+  buttons.div.style.display = 'flex';
+  buttons.div.style.flexFlow = 'row';
+  buttons.div.style.justifyContent = 'safe center';
+  buttons.div.style.alignContent = 'center';
+  buttons.paragraph.type = 'button';
+  buttons.paragraph.id = 'new-paragraph-button';
+  buttons.paragraph.textContent = 'Add paragraph';
+  buttons.paragraph.addEventListener('click', createParagraph);
+  buttons.save.type = 'button';
+  buttons.save.id = 'save-entry-button';
+  buttons.save.textContent = 'Save';
+  buttons.save.addEventListener('click', saveItem);
+  buttons.div.appendChild(buttons.paragraph);
+  buttons.div.appendChild(buttons.save);
+  form.appendChild(buttons.div);
+
+  function createParagraph() {
+    let index;
+    if (item.paragraphs === undefined) {
+      item.paragraphs = [];
+      index = 0;
+    } else {
+      index = item.paragraphs.length;
+    }
+    item.paragraphs.push('');
+
+    const div = document.createElement('div');
+    const paragraph = document.createElement('textarea');
+    paragraph.addEventListener('focusout', () => {
+      item.paragraphs[index] = paragraph.value;
+    });
+    div.appendChild(paragraph);
+    form.insertBefore(div, buttons.div);
+  }
+
+  async function saveItem() {
+    await addTestData(item);
+    form.remove();
+    main.appendChild(newItemButton);
+    clearItems();
+    fillItems();
+  }
+}
+newItemButton.addEventListener('click', createItem);

@@ -1,0 +1,45 @@
+ @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #294c60;
+  color: #ffefd3;
+  font-family: 'Dosis', sans-serif;
+}
+
+main {
+  width: 70em;
+  max-width: 90%;
+  margin: auto;
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+}
+
+.cms-entry {
+  border: solid 0.5em #001b2e;
+  border-radius: 1em;
+  margin: 1em;
+}
+
+form {
+  width: 40em;
+  max-width: 90%;
+  margin: auto;
+}
+
+form button {
+  margin: 0.25em;
+}
+
+textarea {
+  resize: vertical;
+  width: 100%;
+  margin: 0.25em;
+  padding: 0.25em;
+  border: none;
+  border-radius: 0.25em;
+}
