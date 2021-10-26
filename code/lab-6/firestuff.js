@@ -1,5 +1,13 @@
 import { initializeApp } from 'firebase/app';
-import { collection, doc, addDoc, deleteDoc, getDocs, getFirestore } from 'firebase/firestore';
+import {
+  collection,
+  doc,
+  addDoc,
+  deleteDoc,
+  updateDoc,
+  getDocs,
+  getFirestore,
+} from 'firebase/firestore';
 
 const app = initializeApp({
   apiKey: 'AIzaSyA3D6y8tekOmx8P7Nw0i2D4RKAkdHH6-NQ',
@@ -34,4 +42,8 @@ export async function getTestData() {
 
 export async function deleteTestData(id) {
   await deleteDoc(doc(firestore, 'test', id));
+}
+
+export async function updateTestData(id, data) {
+  await updateDoc(doc(firestore, 'test', id), data);
 }

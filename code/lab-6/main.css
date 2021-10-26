@@ -30,15 +30,28 @@ h1 {
   align-items: flex-start;
 }
 
+button {
+  margin: 0.25em;
+  padding: 0.25em 0.75em;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.2em;
+  background: #001b2e;
+  color: #ffc49b;
+  border: none;
+  border-radius: 0.5em;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #adb6c4;
+  color:#001b2e;
+}
+
 form {
   border: solid 0.5em #001b2e;
   border-radius: 1em;
   margin: 1em;
   padding: 1em;
-}
-
-form button {
-  margin: 0.25em;
 }
 
 textarea {
@@ -49,10 +62,17 @@ textarea {
   border-radius: 0.25em;
 }
 
-.textarea-wrapper {
+.paragraph-wrapper {
   width: 40em;
   max-width: 90%;
   margin: auto;
+}
+
+.title-wrapper, .buttons-wrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: safe center;
+  align-content: center;
 }
 
 #new-item-button-wrapper {

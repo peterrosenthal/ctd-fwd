@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "dev": "webpack --mode=none",
-    "prod": "webpack --mode=prod",
+    "prod": "webpack --mode=production",
     "serve": "http-server"
   },
   "author": "Peter Rosenthal",

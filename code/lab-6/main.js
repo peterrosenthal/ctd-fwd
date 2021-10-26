@@ -1,10 +1,11 @@
-import { addTestData, deleteTestData, getTestData } from './firestuff.js';
-
-const main = document.querySelector('main');
-const newItemButton = document.querySelector('#new-item-button');
-const newItemButtonWrapper = document.querySelector('#new-item-button-wrapper');
+import { addTestData, deleteTestData, getTestData, updateTestData } from './firestuff.js';
 
 let data;
+
+const main = document.querySelector('main');
+const newItemButtonWrapper = document.querySelector('#new-item-button-wrapper');
+const newItemButton = document.querySelector('#new-item-button');
+newItemButton.addEventListener('click', () => {editItem(undefined, newItemButtonWrapper); });
 
 // function to fill page with items
 async function fillItems() {
@@ -40,7 +41,7 @@ async function fillItems() {
     editButton.type = 'button';
     editButton.textContent = 'Edit';
     // TODO: add function to event listener for editing an entry
-    editButton.addEventListener('click', () => {console.log(data);});
+    editButton.addEventListener('click', () => { editItem(item, itemWrapper); });
     buttonsWrapper.appendChild(editButton);
 
     const deleteButton = document.createElement('button');
@@ -59,27 +60,28 @@ function clearItems() {
   }
 }
 
-// add new item
-async function createItem() {
-  const item = {};
+// edit an existing (or new) item
+async function editItem(item, before) {
+  const isNew = (item === undefined || item === null);
+  item = isNew ? {} : item;
 
-  newItemButtonWrapper.remove();
   const form = document.createElement('form');
-  main.appendChild(form);
+  main.insertBefore(form, before);
+  before.remove();
 
   const title = {
     div: document.createElement('div'),
     label: document.createElement('label'),
     entry: document.createElement('input'),
   };
-  title.div.style.display = 'flex';
-  title.div.style.flexFlow = 'row';
-  title.div.style.justifyContent = 'safe center';
-  title.div.style.alignContent = 'center';
+  title.div.className = 'title-wrapper';
   title.label.textContent = 'Title: ';
   title.label.htmlFor = 'title-entry';
   title.entry.id = 'title-entry';
   title.entry.type = 'text';
+  if (!isNew) {
+    title.entry.value = item.title;
+  }
   title.entry.addEventListener('focusout', () => { item.title = title.entry.value; });
   title.div.appendChild(title.label);
   title.div.appendChild(title.entry);
@@ -90,14 +92,11 @@ async function createItem() {
     paragraph: document.createElement('button'),
     save: document.createElement('button'),
   };
-  buttons.div.style.display = 'flex';
-  buttons.div.style.flexFlow = 'row';
-  buttons.div.style.justifyContent = 'safe center';
-  buttons.div.style.alignContent = 'center';
+  buttons.div.className = 'buttons-wrapper';
   buttons.paragraph.type = 'button';
   buttons.paragraph.id = 'new-paragraph-button';
   buttons.paragraph.textContent = 'Add paragraph';
-  buttons.paragraph.addEventListener('click', createParagraph);
+  buttons.paragraph.addEventListener('click', () => { createParagraph(undefined); });
   buttons.save.type = 'button';
   buttons.save.id = 'save-entry-button';
   buttons.save.textContent = 'Save';
@@ -106,35 +105,59 @@ async function createItem() {
   buttons.div.appendChild(buttons.save);
   form.appendChild(buttons.div);
 
-  function createParagraph() {
-    let index;
+  let paragraphIndex = 0;
+
+  if (!isNew) {
+    for (const paragraph of item.paragraphs) {
+      createParagraph(paragraph);
+    }
+  }
+
+  function createParagraph(value) {
     if (item.paragraphs === undefined) {
       item.paragraphs = [];
-      index = 0;
-    } else {
-      index = item.paragraphs.length;
+      paragraphIndex = 0;
     }
-    item.paragraphs.push('');
+    if (paragraphIndex >= item.paragraphs.length) {
+      item.paragraphs.push('');
+    }
+    const index = paragraphIndex;
 
-    const div = document.createElement('div');
-    div.className = 'textarea-wrapper';
-    const paragraph = document.createElement('textarea');
-    paragraph.addEventListener('focusout', () => {
-      item.paragraphs[index] = paragraph.value;
+    const paragraph = {
+      div: document.createElement('div'),
+      entry: document.createElement('textarea'),
+    };
+    paragraph.div.className = 'paragraph-wrapper';
+    if (value !== undefined) {
+      paragraph.entry.value = value;
+    }
+    paragraph.entry.addEventListener('focusout', () => {
+      item.paragraphs[index] = paragraph.entry.value;
     });
-    div.appendChild(paragraph);
-    form.insertBefore(div, buttons.div);
+    paragraph.div.appendChild(paragraph.entry);
+    form.insertBefore(paragraph.div, buttons.div);
+
+    paragraphIndex++;
   }
 
   async function saveItem() {
-    await addTestData(item);
-    form.remove();
-    main.appendChild(newItemButtonWrapper);
+    if (isNew) {
+      await addTestData(item);
+      form.remove();
+      main.appendChild(before);
+    } else {
+      const id = item.id;
+      const newItem = {
+        title: item.title,
+        paragraphs: item.paragraphs,
+      };
+      await updateTestData(id, newItem);
+      form.remove();
+    }
     clearItems();
     fillItems();
   }
 }
-newItemButton.addEventListener('click', createItem);
 
 async function deleteItem(id) {
   await deleteTestData(id);
