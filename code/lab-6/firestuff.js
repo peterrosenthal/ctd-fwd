@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { collection, addDoc, getDocs, getFirestore } from 'firebase/firestore';
+import { collection, doc, addDoc, deleteDoc, getDocs, getFirestore } from 'firebase/firestore';
 
 const app = initializeApp({
   apiKey: 'AIzaSyA3D6y8tekOmx8P7Nw0i2D4RKAkdHH6-NQ',
@@ -25,7 +25,13 @@ export async function getTestData() {
   let data = [];
   const query = await getDocs(collection(firestore, 'test'));
   query.forEach((doc) => {
-    data.push(doc.data());
+    const newData = doc.data();
+    newData.id = doc.id;
+    data.push(newData);
   });
   return data;
+}
+
+export async function deleteTestData(id) {
+  await deleteDoc(doc(firestore, 'test', id));
 }

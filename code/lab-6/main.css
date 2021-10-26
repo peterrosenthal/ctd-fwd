@@ -23,12 +23,18 @@ h1 {
   border: solid 0.5em #001b2e;
   border-radius: 1em;
   margin: 1em;
+  padding: 1em;
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 form {
-  width: 40em;
-  max-width: 90%;
-  margin: auto;
+  border: solid 0.5em #001b2e;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 1em;
 }
 
 form button {
@@ -38,8 +44,20 @@ form button {
 textarea {
   resize: vertical;
   width: 100%;
-  margin: 0.25em;
   padding: 0.25em;
   border: none;
   border-radius: 0.25em;
+}
+
+.textarea-wrapper {
+  width: 40em;
+  max-width: 90%;
+  margin: auto;
+}
+
+#new-item-button-wrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
 }

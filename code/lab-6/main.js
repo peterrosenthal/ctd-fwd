@@ -1,7 +1,8 @@
-import { addTestData, getTestData } from './firestuff.js';
+import { addTestData, deleteTestData, getTestData } from './firestuff.js';
 
 const main = document.querySelector('main');
 const newItemButton = document.querySelector('#new-item-button');
+const newItemButtonWrapper = document.querySelector('#new-item-button-wrapper');
 
 let data;
 
@@ -9,19 +10,44 @@ let data;
 async function fillItems() {
   data = await getTestData();
   for (const item of data) {
-    const div = document.createElement('div');
-    div.classList.add('cms-entry');
-    main.insertBefore(div, newItemButton);
+    const itemWrapper = document.createElement('div');
+    itemWrapper.classList.add('cms-entry');
+    main.insertBefore(itemWrapper, newItemButtonWrapper);
+
+    const textWrapper = document.createElement('div');
+    textWrapper.style.width = '75%';
+    itemWrapper.appendChild(textWrapper);
 
     const h2 = document.createElement('h2');
     h2.textContent = item.title;
-    div.appendChild(h2);
+    textWrapper.appendChild(h2);
 
     for (const paragraph of item.paragraphs) {
       const p = document.createElement('p');
       p.textContent = paragraph;
-      div.appendChild(p);
+      textWrapper.appendChild(p);
     }
+    
+    const buttonsWrapper = document.createElement('div');
+    buttonsWrapper.style.width = '20%';
+    buttonsWrapper.style.display = 'flex';
+    buttonsWrapper.style.flexFlow = 'column';
+    buttonsWrapper.style.justifyContent = 'center';
+    buttonsWrapper.style.alignItems = 'flex-end';
+    itemWrapper.appendChild(buttonsWrapper);
+
+    const editButton = document.createElement('button');
+    editButton.type = 'button';
+    editButton.textContent = 'Edit';
+    // TODO: add function to event listener for editing an entry
+    editButton.addEventListener('click', () => {console.log(data);});
+    buttonsWrapper.appendChild(editButton);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.type = 'button';
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', () => { deleteItem(item.id); });
+    buttonsWrapper.appendChild(deleteButton);
   }
 }
 fillItems();
@@ -37,7 +63,7 @@ function clearItems() {
 async function createItem() {
   const item = {};
 
-  newItemButton.remove();
+  newItemButtonWrapper.remove();
   const form = document.createElement('form');
   main.appendChild(form);
 
@@ -91,6 +117,7 @@ async function createItem() {
     item.paragraphs.push('');
 
     const div = document.createElement('div');
+    div.className = 'textarea-wrapper';
     const paragraph = document.createElement('textarea');
     paragraph.addEventListener('focusout', () => {
       item.paragraphs[index] = paragraph.value;
@@ -102,9 +129,15 @@ async function createItem() {
   async function saveItem() {
     await addTestData(item);
     form.remove();
-    main.appendChild(newItemButton);
+    main.appendChild(newItemButtonWrapper);
     clearItems();
     fillItems();
   }
 }
 newItemButton.addEventListener('click', createItem);
+
+async function deleteItem(id) {
+  await deleteTestData(id);
+  clearItems();
+  fillItems();
+}
