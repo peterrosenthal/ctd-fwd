@@ -16,4 +16,8 @@ The mock-up and component hierarchy does a pretty good job of describing the ove
   3. Because each ToDoEntry component has an on-click action but it is not inherently a button, whether the component is being hovered over or not should be stored in the component's state, so that we can give the user some sort of visual indication that the element is clickable. And the same needs to be done for the button in the NewEntry component to get hover stylings  working I believe.
 
 ## Static React App
+While creating the static app I payed extra attention to getting all of my styling and responsive design right the first time, that way it's going to be super easy to add functionality to the static page for part b of the lab.
 
+The static app can be explored from my [class portal](https://creative.colorado.edu/~pero7021/fwd/labs/lab7a/), and the code (located in this repository at `/code/lab7/`) has been archived under the [l7a branch](https://gitlab.com/peterrosenthal/fwd/-/tree/l7a/code/lab-7) similar to how I have been archiving project milestones with branches in this repository. And I've included a screenshot below as well!
+
+![Screenshot showing the sticky-note aesthetic of the static react app.](static-app-screenshot.png)
