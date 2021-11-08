@@ -13,6 +13,7 @@ For my to-do list app, I decided I wanted to go for a bit of a sticky-notes type
 The mock-up and component hierarchy does a pretty good job of describing the over all data flow architecture of the app, but just as a quick recap: there are only two pieces of data in this app that are coponent state:
   1. The array of strings containing the to-do items is state data in the ToDoList component.
   2. The contents of the text input for new to-do items is state data in the NewEntry component.
+  3. Because each ToDoEntry component has an on-click action but it is not inherently a button, whether the component is being hovered over or not should be stored in the component's state, so that we can give the user some sort of visual indication that the element is clickable. And the same needs to be done for the button in the NewEntry component to get hover stylings  working I believe.
 
 ## Static React App
 
