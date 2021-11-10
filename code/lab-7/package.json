@@ -1,7 +1,7 @@
 {
   "name": "lab-7",
   "version": "0.1.0",
-  "homepage": "https://creative.colorado.edu/~pero7021/fwd/labs/lab7a/",
+  "homepage": "https://creative.colorado.edu/~pero7021/fwd/labs/lab7b/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

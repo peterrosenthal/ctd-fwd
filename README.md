@@ -29,8 +29,10 @@ This repository is organized into 2 major sections, `/process/` where I discuss 
 - [Code](/code/lab-6/)
 - [Website](https://creative.colorado.edu/~pero7021/fwd/labs/lab6/)
 ### Lab 7
+- [Process](/process/lab-7/)
 - [Code](/code/lab-7/)
 - [Website Part A](https://creative.colorado.edu/~pero7021/fwd/labs/lab7a/)
+- [Website Part B](https://creative.colorado.edu/~pero7021/fwd/labs/lab7b/)
 ### Project 1
 - [Process Milestone 1](/process/project-1/README.md#milestone-1)
 - [Process Milestone 2](/process/project-1/README.md#milestone-2)

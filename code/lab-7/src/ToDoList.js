@@ -4,21 +4,39 @@ import ToDoEntry from './ToDoEntry';
 import ToDoTotal from './ToDoTotal';
 
 export default class ToDoList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      counter: 0,
+    };
+    this.addItem = this.addItem.bind(this);
+    this.removeItem = this.removeItem.bind(this);
+  }
+
+  addItem(contents) {
+    this.setState(state => {
+      const counter = state.counter + 1;
+      const items = state.items.concat({
+        key: counter,
+        todo: contents,
+      });
+
+      return ({
+        items,
+        counter,
+      });
+    });
+  }
+
+  removeItem(key) {
+    this.setState(state => {
+      const items = state.items.filter(item => item.key !== key);
+      return { items };
+    });
+  }
+
   render() {
-    const items = [
-      {
-        key: '0',
-        todo: 'Some to-do text, lorem ipsum, all the likes and things like that',
-      },
-      {
-        key: '1',
-        todo: 'Some slightly shorter to-do text',
-      },
-      {
-        key: '2',
-        todo: 'Even more to-do text for yet another to-do note',
-      },
-    ];
     const styles = {
       wrapper: {
         width: '90%',
@@ -40,11 +58,19 @@ export default class ToDoList extends React.Component {
     return (
       <div style={styles.wrapper} >
         <div style={styles.shaddow} >
-          <ToDoTotal total={items.length.toString()} />
-          <NewEntry />
+          <ToDoTotal total={this.state.items.length.toString()} />
+          <NewEntry newItemHandler={this.addItem} />
         </div>
         <ul style={styles.list} >
-          {items.map(item => <ToDoEntry key={item.key} todo={item.todo} />)}
+          {this.state.items.map(item => {
+            return (
+              <ToDoEntry
+                key={item.key}
+                todo={item.todo}
+                removeItemHandler={() => this.removeItem(item.key)}
+              />
+            );
+          })}
         </ul>
       </div>
     );
