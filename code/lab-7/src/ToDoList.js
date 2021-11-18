@@ -21,11 +21,7 @@ export default class ToDoList extends React.Component {
         key: counter,
         todo: contents,
       });
-
-      return ({
-        items,
-        counter,
-      });
+      return { items, counter };
     });
   }
 

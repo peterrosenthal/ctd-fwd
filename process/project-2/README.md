@@ -14,3 +14,39 @@ Our mockups for this project shows two separate "pages" but we are creating a si
 
 ### Team Members
 For this project, Bella Colosimo and I are partnering up. We never really worked together when we were undergrads in the ATLAS program, but then since we both moved onto the graduate program, we've worked together a lot, because we've been able to leverage our shared past and combined knowledge. We form a pretty consistent/predictable team, and we know well how we work with each other because we've done it numerous times in the past by now. We don't usually dictate out any roles or leadership on our team, and we both often times have a lot of overlap in what we do... which is everything, so we kind of both do everything together, from both the design and production stand point. I do have slightly more experience in coding and Bella has more experience in design, so we do have our respective strengths and weaknesses that we can play to, but I have found in the past that the two of us tend to rely more on direct collaboration than we do on dividing and conquering.
+
+## Milestone 2
+### Component Hierarchy
+![The component hierarchy for the first view of the MVP.](component-hierarchy-first-view.png)
+![The component hierarchy for the second view of the MVP.](component-hierarchy-second-view.png)
+
+### Static App
+We created 2 static apps to represent the 2 separate views that will be present in our 1 final app. The first view can be found at https://creative.colorado.edu/~pero7021/fwd/projects/milestone2/project2/first-view/, and the second view can be found at https://creative.colorado.edu/~pero7021/fwd/projects/milestone2/project2/second-view/.
+
+![A screenshot from the first view of our static app.](static-app-first-view.png)
+![A screenshot from the first view of our static app.](static-app-second-view.png)
+
+### Minimal State Representation
+Bella wrote this minimal state representation earlier, I want to refine it a little, but I don't have time yet...
+
+In our application, we have the following pieces of data:
+
+- The homepage that contains different components 
+- Profile cards, allowing the user to select their chosen character
+- Profile information, allowing the user to “fill in” pre-selected text on their keyboard 
+
+According to the Thinking in React template, we then have to ask three questions about each piece of data. 
+
+1. Is it passed in from a parent via props?
+2. Does it remain unchanged over time?
+3. Can you compute it based on any other state or props in your component? 
+
+The homepage remains unchanged over time, so that is not state. The profile card selection seems to be state because it changes depending on user choice and can’t be computed from anything. And finally the profile information isn’t state because it is computed based on what profile the user selects. 
+
+So our state is:
+
+- The profile card selected 
+
+
+### Team Members
+For this project, Bella Colosimo and I are partnering up. We have a lot of experience as partners in the past, and we have relatively similar skillsets, so we prefer to leverage our combined knowledge rather than divide and conquer. Nonetheless, we are required to say that we are dividing and conquering for the sake of the assigment. So *if* division were to take place during this project, it would be as follows: Bella would mostly take responsibility for creating the static app (milestone 2), and the visual design of the project, though Peter has they're hands in both of those things as well, and Peter would take responsibility for adding state and reactivity to the application, and the possibility of expanding the application beyond the MVP, though Bella has her hands in all of those things as well too.
