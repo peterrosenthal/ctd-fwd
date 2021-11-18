@@ -20,11 +20,15 @@ For this project, Bella Colosimo and I are partnering up. We never really worked
 ![The component hierarchy for the first view of the MVP.](component-hierarchy-first-view.png)
 ![The component hierarchy for the second view of the MVP.](component-hierarchy-second-view.png)
 
+This is/these are the component hierarchy(s) that we started designing based off of. Since starting the development process, we've renamed `Header` to `Title` (for no reason other than I'm picky), and added a `ProfilesList` component to the first view, which surrounds the list of `ProfileCard`s.
+
 ### Static App
 We created 2 static apps to represent the 2 separate views that will be present in our 1 final app. The first view can be found at https://creative.colorado.edu/~pero7021/fwd/projects/milestone2/project2/first-view/, and the second view can be found at https://creative.colorado.edu/~pero7021/fwd/projects/milestone2/project2/second-view/.
 
 ![A screenshot from the first view of our static app.](static-app-first-view.png)
 ![A screenshot from the first view of our static app.](static-app-second-view.png)
+
+Code for the static apps can be found at https://gitlab.com/peter-and-bella-web-dev/project-2/-/tree/main/static/first-view and https://gitlab.com/peter-and-bella-web-dev/project-2/-/tree/main/static/second-view.
 
 ### Minimal State Representation
 Bella wrote this minimal state representation earlier, I want to refine it a little, but I don't have time yet...
