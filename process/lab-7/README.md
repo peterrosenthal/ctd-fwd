@@ -18,9 +18,9 @@ The mock-up and component hierarchy does a pretty good job of describing the ove
 ## Static React App
 While creating the static app I payed extra attention to getting all of my styling and responsive design right the first time, that way it's going to be super easy to add functionality to the static page for part b of the lab.
 
-The static app can be explored from my [class portal](https://creative.colorado.edu/~pero7021/fwd/labs/lab7a/), and the code (located in this repository at `/code/lab7/`) has been archived under the [l7a branch](https://gitlab.com/peterrosenthal/fwd/-/tree/l7a/code/lab-7) similar to how I have been archiving project milestones with branches in this repository. And I've included a screenshot below as well!
+The static app can be explored from my [class portal](https://creative.colorado.edu/~pero7021/fwd/labs/lab7a/), and the code (located in this repository at `/code/lab-7/`) has been archived under the [l7a branch](https://gitlab.com/peterrosenthal/fwd/-/tree/l7a/code/lab-7) similar to how I have been archiving project milestones with branches in this repository. And I've included a screenshot below as well!
 
 ![Screenshot showing the sticky-note aesthetic of the static react app.](static-app-screenshot.png)
 
 ## Final Reactive App
-The final version of the lab 7 app can be explored from my [class portal](https://creative.colorado.edu/~pero7021/fwd/labs/lab7b/), and the code can be found [in this repository](/code/lab7/) just on the regular old main branch.
+The final version of the lab 7 app can be explored from my [class portal](https://creative.colorado.edu/~pero7021/fwd/labs/lab7b/), and the code can be found [in this repository](/code/lab-7/) just on the regular old main branch.
